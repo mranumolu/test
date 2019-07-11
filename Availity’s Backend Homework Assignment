@@ -1,0 +1,94 @@
+1.	Tell me about your proudest professional achievement.  It can be a personal or school project.  
+A.  One of the proudest professional achievement is “I involved in migration part in my latest project”{migrate their                       applications from on-prem data center to Azure cloud}. I wrote terraform scripts to spin up the Azure vm’s which is very initial step to setup the whole platform to run their environment.
+  Another one is “I setup the ELK cluster”  to get the sys logs from all the servers and indexing the logs in a proper way and set up the kibana dashboard ti visualize the health of application in the form of pictorials.so proudly I can say that I check the performance of application[application performance management]
+  
+  2.	Tell me a about a book, blog, article or GitHub repo you read or liked recently, and why you like it and why you should recommend I do the same. 
+A.Recently I have read the Blog about IOT [Internet of things]. Internet of Things offers some interesting applications to our lives easier like in Healthcare, Transportation, and Agriculture. However, various factors like security, privacy and data storage also need to be considered. IoT evolved from the convergence of wireless technologies, micro-electromechanical (MEMS) systems, micro-services, and the Internet. The connection helped to tear down the silo walls between Information technology (IT) and operational technology (OT) making it possible to analyze unstructured machine-generated data for insights that drive improvements.
+
+3.	Describe what Availity does to a 7-year-old.
+
+4.	Coding exercise: You are tasked to write a checker that validates the parentheses of a LISP code.  Write a program (in Java or JavaScript) which takes in a string as an input and returns true if all the parentheses in the string are properly closed and nested.
+A.  import java.util.*;
+ 
+public class ParenthesisMatching
+{
+    public static void main(String[] args) 
+    {
+        Scanner scan = new Scanner(System.in);
+        /* Creating Stack */
+        Stack<Integer> stk = new Stack<Integer>();
+        System.out.println("Parenthesis Matching Test\n");
+        /* Accepting expression */
+        System.out.println("Enter expression");
+        String exp = scan.next();        
+        int len = exp.length();
+        System.out.println("\nMatches and Mismatches:\n");
+        for (int i = 0; i < len; i++)
+        {    
+            char ch = exp.charAt(i);
+            if (ch == '(')
+                stk.push(i);
+            else if (ch == ')')
+            {
+                try
+                {
+                    int p = stk.pop() + 1;
+                    System.out.println("')' at index "+(i+1)+" matched with ')' at index "+p);
+                }
+                catch(Exception e)
+                {
+                    System.out.println("')' at index "+(i+1)+" is unmatched");
+                }
+            }            
+        }
+        while (!stk.isEmpty() )
+            System.out.println("'(' at index "+(stk.pop() +1)+" is unmatched");
+    }
+}
+Parenthesis Matching Test
+ 
+Enter expression
+(a+(b*c)-d)
+ 
+Matches and Mismatches:
+ 
+')' at index 8 matched with ')' at index 4
+')' at index 11 matched with ')' at index 1
+ 
+ 
+ 
+Parenthesis Matching Test
+ 
+Enter expression
+((x+y/(z-w))
+ 
+Matches and Mismatches:
+ 
+')' at index 11 matched with ')' at index 7
+')' at index 12 matched with ')' at index 2
+'(' at index 1 is unmatched
+5.	Coding exercise:  Availity receives enrollment files from various benefits management and enrollment solutions (I.e. HR platforms, payroll platforms).  Most of these files are typically in EDI format.  However, there are some files in CSV format.  For the files in CSV format, write a program that will read the content of the file and separate enrollees by insurance company in its own file. Additionally, sort the contents of each file by last and first name (ascending).  Lastly, if there are duplicate User Ids for the same Insurance Company, then only the record with the highest version should be included. The following data points are included in the file:
+•	User Id (string)
+•	First and Last Name (string)
+•	Version (integer)
+•	Insurance Company (string)
+A. NOTE: I'm just giving the exmaple
+To read the CVS file:
+String csvFilename = "C:\\sample.csv";
+CSVReader csvReader = new CSVReader(new FileReader(csvFilename));
+String[] row = null;
+while((row = csvReader.readNext()) != null) {
+	System.out.println(row[0]
+	          + " # " + row[1]
+	          + " #  " + row[2]);
+csvReader.close();
+
+Sorting name in ascending order:
+public class Alphabetical_Order.
+int n;
+String temp;
+Scanner s = new Scanner(System. in);
+System. out. print("Enter number of names you want to enter:");
+n = s. nextInt();
+String names[] = new String[n];
+Scanner s1 = new Scanner(System. in);
